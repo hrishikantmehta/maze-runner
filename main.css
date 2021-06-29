@@ -1,0 +1,519 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow: hidden;
+}
+
+#gameScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+#smallScreen {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+}
+
+.loading {
+    text-align: center;
+    position: fixed;
+    font-size: 30px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(250, 234, 17);
+    display: none;
+}
+
+.loading-text {
+    text-align: center;
+    margin: 50px;
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+
+.menu {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: bisque;
+    display: none;
+}
+
+
+/* PLAY Button */
+
+.menu-play {
+    position: relative;
+    background-color: #04AA6D;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    left: 35%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.menu-play:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.menu-play:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+
+/* Instruction button */
+
+.menu-instruction {
+    position: relative;
+    background-color: #04AA6D;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    left: 65%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.menu-instruction:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.mmenu-instruction:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+
+/* Levels completed in menu page */
+
+.levels-completed {
+    font-size: 50px;
+    text-align: center;
+    margin: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.levels-completedlowtext {
+    font-size: 20px;
+    text-align: center;
+    margin: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: fixed;
+    top: 70%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    font-style: oblique;
+}
+
+
+/* Instruction Page */
+
+.instruction {
+    text-align: center;
+    position: fixed;
+    font-size: 30px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(164, 230, 78);
+    display: none;
+}
+
+.instruction-ok {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4792f5;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.instruction-ok:hover {
+    background-color: #3e8e41
+}
+
+.instruction-ok:active {
+    /* background-color: #3e8e41; */
+    box-shadow: 0 5px #666;
+    /* transform: translateY(0px); */
+}
+
+.instruction-instruct {
+    text-align: center;
+    margin: 50px;
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* RUNNING PAGE */
+
+.running {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: fixed;
+    font-size: 16px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* width: 100px;
+    height: 30px; */
+    /* background-color: rgb(235, 135, 4); */
+    text-align: center;
+    display: none;
+    border-radius: 20%;
+}
+
+.levelDone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: darkgreen;
+    display: none;
+}
+
+
+/* PAUSE PAGE */
+
+.paused {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(64, 221, 124);
+    display: none;
+}
+
+
+/* PAUSED MENU BUTTON */
+
+.paused-menu {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #fa7a02;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.paused-menu:hover {
+    background-color: #3e8e41
+}
+
+.paused-menu:active {
+    /* background-color: #3e8e41; */
+    box-shadow: 0 5px #666;
+    /* transform: translateY(0px); */
+}
+
+
+/* PAUSED RESUME BUTTON */
+
+.paused-resume {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #fa7a02;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position: fixed;
+    top: 50%;
+    left: 60%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.paused-resume:hover {
+    background-color: #3e8e41
+}
+
+.paused-resume:active {
+    /* background-color: #3e8e41; */
+    box-shadow: 0 5px #666;
+    /* transform: translateY(4px); */
+}
+
+.paused-text {
+    font-size: 30px;
+    text-align: center;
+    margin: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: fixed;
+    top: 15%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    font-style: oblique;
+}
+
+
+/* PAUSED WARNING PAGE */
+
+.pausedWarning {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: gold;
+    display: none;
+}
+
+
+/* WARNING OK BUTTON  */
+
+.pausedWarning-ok {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #f59b47;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.pausedWarning-ok:hover {
+    background-color: #3e8e41
+}
+
+.pausedWarning-ok:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    /* transform: translateY(4px); */
+}
+
+
+/* WARNING CANCEL  BUTTON */
+
+.pausedWarning-cancel {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #f59b47;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position: fixed;
+    top: 50%;
+    left: 60%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.pausedWarning-cancel:hover {
+    background-color: #3e8e41
+}
+
+.pausedWarning-cancel:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    /* transform: translateY(4px); */
+}
+
+.pausedWarning-warning {
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%)
+}
+
+
+/* LEVEL DONE PAGE */
+
+.levelDone {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(85, 247, 158);
+    display: none;
+}
+
+.levelDone-timeTaken {
+    font-size: 30px;
+    text-align: center;
+    margin: 50px;
+    font-weight: bold;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+}
+
+
+/* LEVEL MENU BUTTON */
+
+.levelDone-menu {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #bda105;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position: fixed;
+    top: 50%;
+    left: 60%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.levelDone-menu:hover {
+    background-color: #6018e4dc
+}
+
+.levelDone-menu:active {
+    background-color: #034d50;
+    box-shadow: 0 5px #666;
+    /* transform: translateY(4px); */
+}
+
+
+/* LEVEL NEXT MAZE BUTTON */
+
+.levelDone-nextMaze {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #bda105;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.levelDone-nextMaze:hover {
+    background-color: #6018e4dc
+}
+
+.levelDone-nextMaze:active {
+    background-color: #034d50;
+    box-shadow: 0 5px #666;
+    /* transform: translateY(4px); */
+}
+
+.levelDone-timeTaken {
+    text-align: center;
+    font-size: 50px;
+    margin: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*# sourceMappingURL=main.css.map*/
